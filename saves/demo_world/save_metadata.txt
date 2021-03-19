@@ -1,0 +1,2 @@
+default_datapack
+default_resourcepack
