@@ -1,6 +1,7 @@
 from commands import *
 from file_manager import exec_sql, save_db_filepath
 from object import *
+import os
 
 
 def init():
@@ -18,4 +19,6 @@ def init():
 
 init()
 
-bot.run("ODExNjA4ODgzNjU0ODE5ODYw.YC0rrA.aXpHWRUd1QrE_8bU50p0pDYA1lI")
+print(os.getenv('TOKEN'))
+
+bot.run(os.getenv('TOKEN'))
