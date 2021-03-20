@@ -1,3 +1,4 @@
+import keep_alive
 from commands import *
 from file_manager import exec_sql, save_db_filepath
 from object import *
@@ -19,6 +20,6 @@ def init():
 
 init()
 
-print(os.getenv('TOKEN'))
+keep_alive.keep_alive()
 
 bot.run(os.getenv('TOKEN'))
