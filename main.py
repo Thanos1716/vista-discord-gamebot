@@ -19,6 +19,9 @@ def init():
 
 init()
 
-keep_alive.keep_alive()
-
-bot.run(os.getenv('TOKEN'))
+if os.path.isdir("/home/runner"):  # Checks if running on a replit server, runs program to launch keep_alive if so
+    keep_alive.keep_alive()
+    bot.run(os.getenv('TOKEN'))
+else:
+    with open(".env", "r") as f:  # Had to use file management, since the os 'get env' didn't seem to work locally
+        bot.run(f.read())
