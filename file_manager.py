@@ -1,7 +1,7 @@
 import math
 import sqlite3
 import numpy as np
-from noise import pnoise2, snoise2
+from noise import snoise2  # pnoise2, ???
 from PIL import Image
 
 save_db_filepath = "saves/demo_world/world_data.db"
@@ -40,7 +40,8 @@ def get_humidity(x, y):
 #     for i in range(-1, 2):
 #         for j in range(-1, 2):
 #             if get_elevation(x + j, y + i) < get_elevation(x, y) and rec > 0:
-#                 if get_elevation(x + j, y + i) == min(min(get_elevation(x + k, y + l) for k in range(-1, 2)) for l in range(-1, 2)):
+#                 if get_elevation(x + j, y + i) == min(min(
+#                 get_elevation(x + k, y + l) for k in range(-1, 2)) for l in range(-1, 2)):
 #                     get_adjacent(x + j, y + i, img, rec-1)
 #                     print("Recursion", rec, end="\n")
 #                     found += 1

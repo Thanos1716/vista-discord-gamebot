@@ -109,7 +109,6 @@ class Game(Cog):
                     title="Search by ID",
                     description="Currently not supported, please use `@[target]` instead", colour=0xFF8800))
 
-
     @command(aliases=["m"])
     async def map(self, ctx, seed: str = None):
         if seed:

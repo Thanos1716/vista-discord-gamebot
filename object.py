@@ -5,8 +5,8 @@ from file_manager import exec_sql, save_db_filepath
 
 class Object:
     def __init__(self, object_id):
-        self.object_class, self.class_id, self.location, self.column_name = \
-            exec_sql(save_db_filepath, f"SELECT object_class, class_id, location, column_name FROM objects "
+        self.object_class, self.object_id, self.class_id, self.location, self.column_name = \
+            exec_sql(save_db_filepath, f"SELECT object_class, object_id, class_id, location, column_name FROM objects "
                                        f"WHERE object_id = {object_id}")
 
 
@@ -24,7 +24,8 @@ class Item(Object):
         return out
 
     def move_item(self, target):
-        # if target in execute_sql(filepath, "SELECT COUNT(1) FROM objects WHERE location={} AND object_id={};".format(self.location, self.object_id)):
+        # if target in execute_sql(filepath, "SELECT COUNT(1) FROM objects WHERE location={} AND object_id={};".format(
+        # self.location, self.object_id)):
         # print(execute_sql(filepath, "select location from objects where object_id = {}".format(self.object_id)))
         exec_sql(save_db_filepath, f"UPDATE objects SET location = '{target}' WHERE object_id = {self.object_id}")
         # print(execute_sql(filepath, "select location from objects where object_id = {}".format(self.object_id)))
