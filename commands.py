@@ -72,7 +72,7 @@ class Game(Cog):
     @command(aliases=["i"])
     async def inventory(self, ctx, target: Union[discord.Member, str, None], *, item: str = None):
 
-        # If author doesn't another player, add the target field to the item field and set the target player to author
+        # If first word isn't a member, add the target field to the item field and set the target player to author
         if not isinstance(target, discord.Member):
             if target and (item is None):
                 item = target

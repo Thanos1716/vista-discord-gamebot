@@ -9,6 +9,7 @@ def init():
     for i in range(len(object_ids)):
         if object_ids[i][1] == "items":
             objects.append(Item(object_ids[i][0]))
+            print(objects[i].location)
         elif object_ids[i][1] == "players":
             objects.append(Player(object_ids[i][0]))
 
